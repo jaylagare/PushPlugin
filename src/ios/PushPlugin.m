@@ -243,9 +243,10 @@
                 stringByReplacingOccurrencesOfString:@"\\" withString:@"\\\\"]
                  stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""]
                  stringByReplacingOccurrencesOfString:@"\n" withString:@"\\n"]];
-        else {
-            [jsonString appendFormat:@"\"%@\":\"%@\",", key, [inDictionary objectForKey:key]];
-        }
+        // commented out below to ensure all strings get escaped and prevent nulls from being passed
+        //else {
+        //    [jsonString appendFormat:@"\"%@\":\"%@\",", key, [inDictionary objectForKey:key]];
+        //}
     }
 }
 
